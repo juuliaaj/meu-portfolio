@@ -2,6 +2,18 @@ import { motion } from "framer-motion";
 import { IoMdDownload } from "react-icons/io";
 
 export function About() {
+    let age = 0;
+
+    const birthDate = new Date("2007-11-26");
+    const today = new Date();
+
+    age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
     return (
         <motion.section
             id="about"
@@ -14,7 +26,7 @@ export function About() {
                 <h2>Sobre mim</h2>
 
                 <p>
-                    Sou estudante da <b>Escola Técnica Estadual Monteiro Lobato</b>, onde curso <b>Informática</b>. Tenho <b>18 anos</b> e estou em busca de uma <b>oportunidade de estágio</b> na área de Tecnologia da Informação.
+                    Tenho <b>{age} anos</b> e estou sempre em busca de <b>aprimorar meus conhecimentos</b> na área de Tecnologia da Informação.
                 </p>
                 <p>
                     Possuo experiência em desenvolvimento <b>fullstack</b>, com domínio de tecnologias como <b>HTML</b>, <b>CSS</b>, <b>Java</b>, <b>JavaScript</b>, <b>TypeScript</b>, <b>Node.js</b>, <b>Python</b>, <b>Git</b>, <b>SQL</b> e <b>PostgreSQL</b>. Apesar disso, tenho um carinho especial pelo <b>desenvolvimento frontend</b> e pelo <b>design de interfaces</b>, áreas nas quais posso unir criatividade e tecnologia para criar experiências visuais e funcionais.
